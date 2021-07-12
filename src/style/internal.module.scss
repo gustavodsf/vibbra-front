@@ -1,0 +1,88 @@
+.headerContainer {
+  background: var(--white);
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
+  border-bottom: 1px solid var(--gray-100);
+
+  p {
+    margin-left: 2rem;
+    padding: 1.25rem 0 0.25rem 2rem;
+    border-left: 2px solid var(--gray-100);
+  }
+
+  span {
+    margin-left: auto;
+    text-transform: capitalize;
+  }
+
+  img {
+    height: 2.5rem;
+  }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 90vh;
+  flex-direction: row;
+
+  .sidebarExpand {
+    flex: 2;
+    background: var(--blue);
+  }
+
+  .sidebarCollapsed {
+    flex: 0.2;
+    background: var(--blue);
+  }
+
+  .contentExpand {
+    flex: 13;
+    padding: 1rem;
+    background: var(--gray-50);
+  }
+
+  .contentCollapsed {
+    flex: 14.8;
+    padding: 1rem;
+    background: var(--gray-50);
+  }
+
+  .toggleIcon {
+    text-align: center;
+    padding: 1rem;
+    color: var(--gray-50);
+    cursor: pointer;
+  }
+
+  .menuItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    color: var(--gray-50);
+    cursor: pointer;
+    span {
+      width: 9rem;
+    }
+  }
+
+  .menuItem:hover {
+    background-color: var(--gray-50);
+    color: var(--blue);
+    border-right: 2px solid var(--blue);
+    span {
+      background-color: var(--gray-50);
+    }
+  }
+
+  .menuItemTextExpand {
+    background: var(--blue);
+    text-align: center;
+  }
+
+  .menuItemTextCollapsed {
+    display: none;
+  }
+}
