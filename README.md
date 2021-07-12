@@ -72,24 +72,24 @@ Configuração da notificação de boas vindas, permitindo personalizar a mensag
 Usuário deve informar os seguintes dados para configurar o Email
 Dados técnicos do servidor
 
--Nome do Servidor SMTP
--Porta de envio
--Login
--Senha
+- Nome do Servidor SMTP
+- Porta de envio
+- Login
+- Senha
 
 Dados de envio
 
--Nome do remetente
--Email do remetente
+- Nome do remetente
+- Email do remetente
 
 Submissão de templates
 
--Usuário é permitido submeter templates de e-mail, subindo um ou vários arquivos com extensão .html, sendo cada arquivo considerado um template
+- Usuário é permitido submeter templates de e-mail, subindo um ou vários arquivos com extensão .html, sendo cada arquivo considerado um template
 
 ##### Tela setup SMS
 
 Usuário deve informar os seguintes dados para configurar o envio de SMS
 
--Provedor de SMS integrado
--Login
--Senha
+- Provedor de SMS integrado
+- Login
+- Senha
