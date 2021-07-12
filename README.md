@@ -1,4 +1,4 @@
-#### Stack Utilizada
+### Stack Utilizada
 
 A stack escolhida para o desenvolvimento foi o `react` , juntamente com `typescript`, para a criação do projeto foi utilizado `create react app`.
 
@@ -14,11 +14,11 @@ npm run install
 npm run start
 ```
 
-#### Endereço da aplicação
+### Endereço da aplicação
 
 A aplicação está hospedada no [heroku](https://vibbra-app.herokuapp.com/), para o deploys ser automatizado no no mesmo, em vez de fazer uso do gitlab fornecido pela Vibbra, fiz uso do meu github foi facilita a integração, sendo assim, o endereço do código é o este [gustavodsf/vibbra-front](https://github.com/gustavodsf/vibbra-front)
 
-#### Estrutua de diretórios
+### Estrutua de diretórios
 
 ```shell
   .
@@ -34,11 +34,11 @@ A aplicação está hospedada no [heroku](https://vibbra-app.herokuapp.com/), pa
   └── Procfile  # arquivo utilizado pelo heroku, para deploy da applicaçãp
 ```
 
-#### Escopo
+### Escopo
 
 Seguem abaixo, o itens que foram exigidos a confecção para o desafio da `vibbra, foi inforamdo que tinha de fazer os tópicos de 1 até 5.
 
-##### Tela de configuração
+#### Tela de configuração
 
 Usuário deve criar um aplicativo, para que possa fazer a integração com seu sistema, informando:
 
@@ -46,7 +46,7 @@ Usuário deve criar um aplicativo, para que possa fazer a integração com seu s
 - Canais desejados de integração `(Web Push, E-mail, SMS)`
 - Posteriormente, o usuário deve fazer configurações adicionais por canal
 
-##### Tela de setup Web Push
+#### Tela de setup Web Push
 
 Usuário deve informar os seguintes dados para configurar o Web Push
 Dados básicos
@@ -67,7 +67,7 @@ Configuração da notificação de boas vindas, permitindo personalizar a mensag
 -Habilitar / Desabilitar link de destino, ao clicar na notificação
 -Endereço do link de destino
 
-##### Tela de setup de e-mail
+#### Tela de setup de e-mail
 
 Usuário deve informar os seguintes dados para configurar o Email
 Dados técnicos do servidor
@@ -86,7 +86,7 @@ Submissão de templates
 
 - Usuário é permitido submeter templates de e-mail, subindo um ou vários arquivos com extensão .html, sendo cada arquivo considerado um template
 
-##### Tela setup SMS
+#### Tela setup SMS
 
 Usuário deve informar os seguintes dados para configurar o envio de SMS
 
