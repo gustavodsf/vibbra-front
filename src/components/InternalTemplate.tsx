@@ -7,6 +7,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBars,
+  faTablet,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -31,7 +32,7 @@ function MenuItem(props: MenuItemProps){
   return (
   <Nav.Item
     className={styles.menuItem}
-    onClick={()=> history.push(props.link)}
+    onClick={()=> history?.push(props.link)}
   >
     <FontAwesomeIcon icon={props.icon} className={styles.menuItemIcon}/>
     <span
@@ -66,7 +67,12 @@ export function InternalTemplate(props: InternalTemplateProps) {
           >
             <FontAwesomeIcon icon={faBars} className={styles.navIcon}/>
           </Nav.Item>
-
+          <MenuItem 
+            toggle={toggle}
+            text="Aplicação"
+            icon={faTablet}
+            link="/app" 
+          />
         </Nav>
       </div>
       <div className={toggle ? styles.contentExpand : styles.contentCollapsed}>
