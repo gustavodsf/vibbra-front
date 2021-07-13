@@ -2,6 +2,8 @@ $theme-colors: (
   "primary": #04a2e8,
 );
 
+@import "~bootstrap/scss/bootstrap";
+
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +26,7 @@ body {
   --gray-800: #494d4b;
 
   --blue: #04a2e8;
+  --green: #28a745;
 }
 
 @media (max-width: 1080px) {

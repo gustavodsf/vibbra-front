@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+
+.home-container {
+  font-family: "Otomanopee One", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem;
+
+  .home-company-name {
+    color: var(--blue);
+    font-size: 2rem;
+  }
+
+  .home-message {
+    color: var(--green);
+    font-size: 1.5rem;
+  }
+}
