@@ -1,57 +1,88 @@
-import { FormEvent, useState } from 'react';
-import { toast } from 'react-toastify';
-import {Form, Button, Col} from "react-bootstrap";
+import { useState } from 'react';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormLabel from '@material-ui/core/FormLabel';
+import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
+
+import { EmailConfig } from '../components/EmailConfig';
+import { SMSConfig } from '../components/SMSConfig';
+import { WebPushConfig } from '../components/WebPushConfig';
 
 import '../style/addAppConfig.scss';
 
+
+
 export function AddAppConfig(){
-  const [ appName, setAppName] = useState('');
-  const [ isWebPush, setIsWebPush] = useState('');
-  const [ isEmail, setIsEmail] = useState('');
-  const [ isSMS, setSMS] = useState('');
 
+  
+  const [appName, setAppName] = useState('')
 
-  const isInputValid = () => {
-    let hasError = true;
-    if(appName.trim() === ''){
-      hasError=false;
-      toast.error('Necessário o preenchimento do campo Nome');
-    }
+  const [webPushConfig, setWebPushConfig] = useState({})
+  const [emailConfig, setEmailConfig] = useState({})
+  const [smsConfig, setSmsConfig] = useState({})
 
-    if(isWebPush === '' && isEmail === '' && isSMS === ''){
-      hasError=false;
-      toast.error('Necessário o preenchimento do canal de comunicação');
-    }
-    return hasError;
+  const [communicationChanel, setCommunicationChanel] = useState({
+    isWebPush: false,
+    isEmail: false,
+    isSMS: false,
+  });
+
+  
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCommunicationChanel({ ...communicationChanel, [event.target.name]: event.target.checked });
   };
 
-  const handleAppConfig = (event: FormEvent) => {
-    event.preventDefault();
-
-    if(isInputValid()){
-      toast.success('Aplicação adicionada com sucesso! Agora tem de configurar os canais escolidos.')
-    }
-  }
-
+  const { isWebPush, isEmail, isSMS } = communicationChanel;
+  // const error = [isWebPush, isEmail, isSMS ].filter((v) => v).length == 0;
   return(
     <div className="my-container">
-      <Form className="input-form"  onSubmit={handleAppConfig}>
-        <Form.Group as={Col} controlId="formGridNomeApp">
-          <Form.Label>Nome Applicativo</Form.Label>
-          <Form.Control type="text" placeholder="Nome do aplicativo" onChange={event => setAppName(event.target.value)}/>
-        </Form.Group>
-
-        <Form.Group as={Col} id="formGridCanal">
-          <Form.Label>Canais de Integração</Form.Label>
-          <Form.Check type="checkbox" label="Web Push" onChange={event => setIsWebPush(event.target.value)}/>
-          <Form.Check type="checkbox" label="E-mail" onChange={event => setIsEmail(event.target.value)}/>
-          <Form.Check type="checkbox" label="SMS" onChange={event => setSMS(event.target.value)}/>
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Enviar
-        </Button>
-      </Form>
+      <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+        spacing={3}
+      >
+        <Grid item xs={12}>
+          <TextField 
+            required
+            id="standard-required"
+            label="Nome Aplicativo"
+            fullWidth 
+            onChange={event => setAppName(event.target.value)}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <FormControl required component="fieldset">
+            <FormLabel component="legend">Canal de Comunicação</FormLabel>
+            <FormGroup>
+              <FormControlLabel
+                control={<Checkbox checked={isWebPush} onChange={handleChange} name="isWebPush" />}
+                label="Web Push"
+              />
+              <FormControlLabel
+                control={<Checkbox checked={isEmail} onChange={handleChange} name="isEmail" />}
+                label="E-mail"
+              />
+              <FormControlLabel
+                control={<Checkbox checked={isSMS} onChange={handleChange} name="isSMS" />}
+                label="SMS"
+              />
+            </FormGroup>
+            <FormHelperText>Escolha ao menos um</FormHelperText>
+          </FormControl>
+        </Grid>
+      </Grid>
+      <div>
+        { isWebPush ? <WebPushConfig setFunction = {setWebPushConfig} /> : <></>}
+        { isEmail ? <EmailConfig setFunction = {setEmailConfig} /> : <></>}
+        { isSMS ? <SMSConfig setFunction = {setSmsConfig} /> : <></>}
+      </div>
     </div>
   );
 }

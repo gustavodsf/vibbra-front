@@ -1,0 +1,33 @@
+.titulo {
+  margin-bottom: 0.1rem;
+  font-size: 1rem;
+  color: var(--blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+
+  .icon {
+    margin: 0 0.5rem;
+  }
+
+  &::before {
+    content: "";
+    flex: 1;
+    height: 0.1rem;
+    background: var(--blue);
+    margin-right: 16px;
+  }
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 0.1rem;
+    background: var(--blue);
+    margin-left: 16px;
+  }
+}
+
+.my-subfields-container {
+  padding: 32px;
+}
