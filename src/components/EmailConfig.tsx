@@ -10,6 +10,7 @@ import {
 import '../style/config.scss'
 
 type EmailType = {
+  app_id: string,
   smtpServerName: string,
   smtpPort: string,
   smtpLogin: string,
@@ -55,7 +56,7 @@ export function EmailConfig(props: EmailConfigProps){
     }
 
     if(!hasError){
-      props.setFunction({smtpServerName, smtpPort, smtpLogin, smtpPass, senderName, senderEmail})
+      props.setFunction({app_id:'', smtpServerName, smtpPort, smtpLogin, smtpPass, senderName, senderEmail})
     } else {
       setError(newError);
       toast.error("A seção de e-mail, possui erro no preenchimento")

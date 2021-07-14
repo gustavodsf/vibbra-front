@@ -10,6 +10,7 @@ import TextField from '@material-ui/core/TextField';
 import '../style/config.scss'
 
 type BlurType = {
+  app_id: string,
   provedorSMS: string,
   login: string,
   senha: string,
@@ -49,7 +50,7 @@ export function SMSConfig(props: SMSConfigProps){
     }
 
     if(!hasError){
-      props.setFunction({provedorSMS, login, senha});
+      props.setFunction({app_id:'', provedorSMS, login, senha});
     } else {
       setError(newError);
       toast.error("A seção de SMS, possui erro no preenchimento")

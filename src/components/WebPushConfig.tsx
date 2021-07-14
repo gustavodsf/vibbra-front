@@ -15,6 +15,7 @@ import {
 import '../style/config.scss'
 
 type WebPushConfigType = {
+  app_id: string,
   siteName: string,
   siteURL: string,
   siteIconURL: string,
@@ -83,8 +84,8 @@ export function WebPushConfig(props: WebPushConfigProps){
 
     if(!hasError){
       props.setFunction(
-        {
-          siteName, siteURL, siteIconURL, messageText, 
+        { 
+          app_id:'', siteName, siteURL, siteIconURL, messageText, 
           btnAllowTxt, btnDontAllowTxt, notifyTitle, 
           notifyText, enableLinkDestiny, urlLinkDestiny
         });
